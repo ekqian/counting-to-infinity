@@ -14,7 +14,7 @@ module.exports = {
       name: `Eric Qian`,
       summary: ``,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Welcome to my blog! My goal with this is to help visualize topics in math, computer science, and anything else that I find interesting. If you have suggestions for blog post ideas, feel free to reach out at `,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
       email: `ekqian@upenn.edu`,
