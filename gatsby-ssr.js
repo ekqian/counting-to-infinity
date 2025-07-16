@@ -10,3 +10,6 @@
 exports.onRenderBody = ({ setHtmlAttributes }) => {
   setHtmlAttributes({ lang: `en` })
 }
+
+const { wrapRootElement } = require("./src/components/mdx-provider")
+exports.wrapRootElement = wrapRootElement
