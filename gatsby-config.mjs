@@ -4,23 +4,44 @@
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
  */
 
+import { dirname } from "path"
+import { fileURLToPath } from "url"
+import remarkImages from "remark-images"
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
-module.exports = {
+export default {
   siteMetadata: {
     title: `Counting to Infinity`,
     author: {
       name: `Eric Qian`,
       summary: ``,
     },
-    description: `Welcome to my blog! My goal with this is to help visualize topics in math, computer science, and anything else that I find interesting. If you have suggestions for blog post ideas, feel free to reach out at `,
+    description: `Welcome! My goal with this blog is to help visualize topics in math, computer science, and anything else that I find interesting. If you have suggestions for blog post ideas, feel free to reach out at `,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
       email: `ekqian@upenn.edu`,
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 630,
+            },
+          },
+        ],
+      },
+    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -34,20 +55,6 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        extensions: [`.mdx`, `.md`],
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 630,
-            },
-          },
-        ],
       },
     },
     `gatsby-transformer-sharp`,

@@ -4,4 +4,17 @@ date: "2025-07-12"
 description: "In this post, we will explore at the geometric intuition behind Euclid's Algorithm for determining the GCD of two integers."
 ---
 
-This is my first post on my new fake blog! How exciting!
+import { InlineMath, BlockMath } from "react-katex"
+
+> "What has been affirmed without proof can also be denied without proof."
+>
+> — Euclid
+
+Here's some inline math: <InlineMath math={'e^{i\\pi} + 1 = 0'} />
+
+<BlockMath
+  math={String.raw`\gcd(a, b) = \begin{cases}
+  a, & \text{if } b = 0 \\
+  \gcd(b, a \bmod b), & \text{otherwise}
+\end{cases}`}
+/>
