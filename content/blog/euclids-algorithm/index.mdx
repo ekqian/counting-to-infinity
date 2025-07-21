@@ -5,16 +5,24 @@ description: "In this post, we will explore at the geometric intuition behind Eu
 ---
 
 import { InlineMath, BlockMath } from "react-katex"
+import HelloFx from "./divisor.jsx"
 
 > "What has been affirmed without proof can also be denied without proof."
 >
 > — Euclid
 
-Here's some inline math: <InlineMath math={'e^{i\\pi} + 1 = 0'} />
+## Introduction
 
-<BlockMath
-  math={String.raw`\gcd(a, b) = \begin{cases}
-  a, & \text{if } b = 0 \\
-  \gcd(b, a \bmod b), & \text{otherwise}
-\end{cases}`}
-/>
+Say you are given this fraction <InlineMath math={'\\frac{16}{24}'} /> - how would you reduce it?
+
+One approach is to find the greatest number that is a factor of both the numerator and denominator. In this case, that number is <InlineMath math={'8'} /> so we can write <InlineMath math={'\\frac{16}{24} = \\frac{2 \\cdot 8}{3 \\cdot 8} = \\frac{2}{3}'} />. We say that <InlineMath math={'8'} /> is the greatest common factor, or equivalently, the greatest common divisor (GCD), of <InlineMath math={'16'} /> and <InlineMath math={'24'} />.
+
+For smaller numbers like <InlineMath math={'16'} /> and <InlineMath math={'24'} />, it's easy to list out the factors of both numbers and pick the largest common one. However, as the numbers get larger, this quickly becomes impractical. For example, how would you find the GCD of <InlineMath math={'145769'} /> and <InlineMath math={'350723'} />?
+
+This is where Euclid's Algorithm comes in.
+
+## Understanding the GCD Visually
+
+Before we get into the algorithm, let's first understand what the GCD means visually.
+
+<HelloFx />

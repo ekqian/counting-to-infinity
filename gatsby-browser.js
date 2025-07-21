@@ -7,6 +7,8 @@ import "./src/normalize.css"
 import "./src/style.css"
 // convert to Latex
 import "katex/dist/katex.min.css"
+// Mafs for math visualization
+import "mafs/core.css"
 
 // Highlighting for code blocks
 import "prismjs/themes/prism.css"
